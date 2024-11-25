@@ -5,12 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fafcf671-d85d-4a29-a550-326ef38aaff2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/amplify.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/deploy-manifest.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/amplify.yml" beforeDir="false" afterPath="$PROJECT_DIR$/amplify.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +80,7 @@
       <workItem from="1732564606485" duration="670000" />
       <workItem from="1732565280672" duration="158000" />
       <workItem from="1732565443420" duration="2611000" />
-      <workItem from="1732568699423" duration="166000" />
+      <workItem from="1732568699423" duration="238000" />
     </task>
     <servers />
   </component>

@@ -4,10 +4,10 @@ frontend:
   phases:
     preBuild:
       commands:
-        - npm ci
+        - corepack enable && npx --yes nypm install
     build:
       commands:
-        - npm run build
+        - pnpm build
         - mv build .amplify-hosting
         - mv .amplify-hosting/client .amplify-hosting/static
         - mkdir -p .amplify-hosting/compute
