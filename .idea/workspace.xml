@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fafcf671-d85d-4a29-a550-326ef38aaff2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/amplify.yml" beforeDir="false" afterPath="$PROJECT_DIR$/amplify.yml" afterDir="false" />
-    </list>
+    <list default="true" id="fafcf671-d85d-4a29-a550-326ef38aaff2" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -80,7 +78,7 @@
       <workItem from="1732564606485" duration="670000" />
       <workItem from="1732565280672" duration="158000" />
       <workItem from="1732565443420" duration="2611000" />
-      <workItem from="1732568699423" duration="343000" />
+      <workItem from="1732568699423" duration="507000" />
     </task>
     <servers />
   </component>
