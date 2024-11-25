@@ -5,13 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fafcf671-d85d-4a29-a550-326ef38aaff2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.prettierignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.prettierrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/components/Button.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/components/Select.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/routes/utils.web-image-converter.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/root.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/root.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes/_index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/_index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/amplify.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deploy-manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +45,7 @@
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;22.11.0&quot;,
     &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;22.9.3&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/bart/workspace/utils.inthefield.me&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/bart/workspace/inthefield.me&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -85,7 +84,8 @@
       <workItem from="1732564395826" duration="204000" />
       <workItem from="1732564606485" duration="670000" />
       <workItem from="1732565280672" duration="158000" />
-      <workItem from="1732565443420" duration="2450000" />
+      <workItem from="1732565443420" duration="2611000" />
+      <workItem from="1732568699423" duration="166000" />
     </task>
     <servers />
   </component>
