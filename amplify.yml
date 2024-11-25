@@ -12,7 +12,7 @@ frontend:
         - mv .amplify-hosting/client .amplify-hosting/static
         - mkdir -p .amplify-hosting/compute
         - mv .amplify-hosting/server .amplify-hosting/compute/default
-        - npm ci --omit dev
+        - corepack enable && npx --yes nypm install
         - cp package.json .amplify-hosting/compute/default
         - cp -r node_modules .amplify-hosting/compute/default
         - cp server.js .amplify-hosting/compute/default
