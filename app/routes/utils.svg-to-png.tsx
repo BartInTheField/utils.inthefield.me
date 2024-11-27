@@ -1,11 +1,18 @@
-import type {MetaFunction} from "@remix-run/node";
-import React, {useState} from 'react';
-import Button from "~/components/Button";
+import type { MetaFunction } from '@remix-run/node';
+import React, { useState } from 'react';
+import Button from '~/components/Button';
+import { services } from '~/services';
+
+const service = services.find((s) => s.key === 'svg-to-png')!;
 
 export const meta: MetaFunction = () => {
     return [
-        {title: "SVG to PNG converter"},
-        {name: "description", content: "Convert SVG files to PNG format with custom dimensions"},
+        { title: service.text },
+        {
+            name: 'description',
+            content: 'Convert SVG files to PNG format with custom dimensions',
+        },
+        { name: 'key', content: service.key },
     ];
 };
 
@@ -13,25 +20,35 @@ export default function Index() {
     const [file, setFile] = useState<File | null>(null);
     const [width, setWidth] = useState<number>(0);
     const [height, setHeight] = useState<number>(0);
-    const [originalDimensions, setOriginalDimensions] = useState<{width: number, height: number} | null>(null);
-
+    const [originalDimensions, setOriginalDimensions] = useState<{
+        width: number;
+        height: number;
+    } | null>(null);
 
     const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         if (e.target.files && e.target.files[0]) {
             const file = e.target.files[0];
             setFile(file);
-            
+
             // Read SVG dimensions
             const reader = new FileReader();
             reader.onload = (event) => {
                 const parser = new DOMParser();
-                const svgDoc = parser.parseFromString(event.target?.result as string, 'image/svg+xml');
+                const svgDoc = parser.parseFromString(
+                    event.target?.result as string,
+                    'image/svg+xml'
+                );
                 const svgElement = svgDoc.documentElement;
-                const viewBox = svgElement.getAttribute('viewBox')?.split(' ') || [];
-                const width = parseFloat(svgElement.getAttribute('width') || viewBox[2] || '0');
-                const height = parseFloat(svgElement.getAttribute('height') || viewBox[3] || '0');
-                
-                setOriginalDimensions({width, height});
+                const viewBox =
+                    svgElement.getAttribute('viewBox')?.split(' ') || [];
+                const width = parseFloat(
+                    svgElement.getAttribute('width') || viewBox[2] || '0'
+                );
+                const height = parseFloat(
+                    svgElement.getAttribute('height') || viewBox[3] || '0'
+                );
+
+                setOriginalDimensions({ width, height });
                 setWidth(width);
                 setHeight(height);
             };
@@ -89,7 +106,10 @@ export default function Index() {
 
     return (
         <div className="flex h-screen items-center justify-center">
-            <form onSubmit={handleSubmit} className="flex flex-col items-center gap-8">
+            <form
+                onSubmit={handleSubmit}
+                className="flex flex-col items-center gap-8"
+            >
                 {file && (
                     <div className="border-4 border-gray-300 p-2 w-full h-full">
                         <img
@@ -98,21 +118,25 @@ export default function Index() {
                             className="max-w-xs max-h-xs"
                             onLoad={(e) => {
                                 // Clean up the object URL after image loads
-                                URL.revokeObjectURL((e.target as HTMLImageElement).src);
+                                URL.revokeObjectURL(
+                                    (e.target as HTMLImageElement).src
+                                );
                             }}
                         />
                     </div>
                 )}
-                <input 
-                    type="file" 
-                    accept=".svg" 
+                <input
+                    type="file"
+                    accept=".svg"
                     onChange={handleFileChange}
                     className="w-full"
                 />
-                
+
                 <div className="flex flex-col gap-4 w-full">
                     <div className="flex items-center gap-2">
-                        <label htmlFor="width" className="w-20">Width:</label>
+                        <label htmlFor="width" className="w-20">
+                            Width:
+                        </label>
                         <input
                             id="width"
                             type="number"
@@ -121,9 +145,11 @@ export default function Index() {
                             className="border p-2 rounded w-full"
                         />
                     </div>
-                    
+
                     <div className="flex items-center gap-2">
-                        <label htmlFor="height" className="w-20">Height:</label>
+                        <label htmlFor="height" className="w-20">
+                            Height:
+                        </label>
                         <input
                             id="height"
                             type="number"
