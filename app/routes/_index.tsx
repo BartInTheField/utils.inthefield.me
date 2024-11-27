@@ -39,5 +39,9 @@ const resources = [
     {
         href: "/utils/web-image-converter",
         text: "Web Image Converter",
+    },
+    {
+        href: "/utils/svg-to-png",
+        text: "SVG to PNG",
     }
 ];
