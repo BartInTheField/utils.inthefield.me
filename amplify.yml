@@ -9,7 +9,7 @@ frontend:
             commands:
                 - pnpm build
                 - pnpm build:server
-                - mv build/bundled.server.js build/server/index.js
+                - mv build/bundled.server.js .amplify-hosting/compute/default/server.js
                 - mv build .amplify-hosting
                 - mv .amplify-hosting/client .amplify-hosting/static
                 - mkdir -p .amplify-hosting/compute
