@@ -9,7 +9,8 @@
         "dev": "remix vite:dev",
         "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
         "start": "remix-serve ./build/server/index.js",
-        "typecheck": "tsc"
+        "typecheck": "tsc",
+        "postbuild": "chmod +x amplify-plugin/postbuild.sh && ./amplify-plugin/postbuild.sh"
     },
     "dependencies": {
         "@remix-run/express": "^2.15.0",

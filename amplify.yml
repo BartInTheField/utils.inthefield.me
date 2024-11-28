@@ -1,21 +1,17 @@
 version: 1
-baseDirectory: .amplify-hosting
 frontend:
     phases:
         preBuild:
             commands:
-                - corepack enable && npx --yes nypm install
+                - 'pnpm install --frozen-lockfile'
         build:
             commands:
-                - pnpm build
-                - pnpm build:server
-                - mkdir -p .amplify-hosting/compute/default
-                - mkdir -p .amplify-hosting/static
-                - mv build/bundled.server.js .amplify-hosting/compute/default/server.js
-                - mv build/client/* .amplify-hosting/static/
-                - mv build/server/* .amplify-hosting/compute/default/
-                - cp deploy-manifest.json .amplify-hosting/deploy-manifest.json
+                - 'pnpm run build'
+                - 'pnpm run postbuild'
     artifacts:
+        baseDirectory: .amplify-hosting
         files:
             - '**/*'
-        baseDirectory: .amplify-hosting
+    cache:
+        paths:
+            - '.pnpm-store/**/*'
