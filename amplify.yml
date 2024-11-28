@@ -9,11 +9,11 @@ frontend:
             commands:
                 - pnpm build
                 - pnpm build:server
+                - mv build/bundled.server.js build/server/index.js
                 - mv build .amplify-hosting
                 - mv .amplify-hosting/client .amplify-hosting/static
                 - mkdir -p .amplify-hosting/compute
                 - mv .amplify-hosting/server .amplify-hosting/compute/default
-                - mv build/bundled.server.js .amplify-hosting/compute/default/server.js
                 - cp deploy-manifest.json .amplify-hosting/deploy-manifest.json
     artifacts:
         files:
