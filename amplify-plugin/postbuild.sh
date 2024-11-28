@@ -7,7 +7,7 @@ mkdir -p ./.amplify-hosting/static
 
 # Copy server build and static files
 cp -r ./build/server ./.amplify-hosting/compute/default
-cp -r ./build/client ./.amplify-hosting/static
+cp -r ./build/client/* ./.amplify-hosting/static/
 
 # Create a temporary directory for production node_modules
 mkdir -p temp_node_modules
@@ -27,6 +27,10 @@ rm -rf temp_node_modules
 cp ./amplify-plugin/deploy-manifest.json ./.amplify-hosting/deploy-manifest.json
 cp ./amplify-plugin/server.js ./.amplify-hosting/compute/default/server.js
 cp ./amplify-plugin/package.json ./.amplify-hosting/compute/default/package.json
+
+# Create client directory and copy static files there
+mkdir -p ./.amplify-hosting/compute/default/client
+cp -r ./build/client/* ./.amplify-hosting/compute/default/client/
 
 # Optional: Remove any unnecessary files from node_modules (adjust as needed)
 cd ./.amplify-hosting/compute/default

@@ -3,13 +3,27 @@
     "framework": { "name": "remix", "version": "2.9.2" },
     "routes": [
         {
-            "path": "/*.*",
+            "path": "/assets/*",
+            "target": {
+                "kind": "Static"
+            }
+        },
+        {
+            "path": "/*.js",
             "target": {
                 "kind": "Static"
             },
-            "fallback": {
-                "kind": "Compute",
-                "src": "default"
+            "headers": {
+                "Content-Type": "application/javascript"
+            }
+        },
+        {
+            "path": "/*.css",
+            "target": {
+                "kind": "Static"
+            },
+            "headers": {
+                "Content-Type": "text/css"
             }
         },
         {
