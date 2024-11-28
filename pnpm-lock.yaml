@@ -26,6 +26,9 @@ importers:
       isbot:
         specifier: ^4.1.0
         version: 4.4.0
+      postcss:
+        specifier: ^8.4.38
+        version: 8.4.49
       react:
         specifier: ^18.2.0
         version: 18.3.1
@@ -35,6 +38,9 @@ importers:
       react-icons:
         specifier: ^5.3.0
         version: 5.3.0(react@18.3.1)
+      tailwindcss:
+        specifier: ^3.4.4
+        version: 3.4.15
     devDependencies:
       '@remix-run/dev':
         specifier: ^2.15.0
@@ -75,15 +81,9 @@ importers:
       eslint-plugin-react-hooks:
         specifier: ^4.6.0
         version: 4.6.2(eslint@8.57.1)
-      postcss:
-        specifier: ^8.4.38
-        version: 8.4.49
       prettier-plugin-tailwindcss:
         specifier: ^0.6.9
         version: 0.6.9(prettier@2.8.8)
-      tailwindcss:
-        specifier: ^3.4.4
-        version: 3.4.15
       typescript:
         specifier: ^5.1.6
         version: 5.7.2
