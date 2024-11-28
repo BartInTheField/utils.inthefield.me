@@ -5,10 +5,7 @@ await esbuild.build({
     bundle: true,
     platform: 'node',
     target: 'node20',
-    format: 'esm',
+    format: 'cjs',
     outfile: 'build/bundled.server.js',
     packages: 'external',
-    banner: {
-        js: 'import { createRequire } from "module"; const require = createRequire(import.meta.url);',
-    },
 });
