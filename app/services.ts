@@ -1,4 +1,9 @@
-import { FaBoxOpen, FaRegImages, FaVectorSquare } from 'react-icons/fa';
+import {
+    FaBoxOpen,
+    FaBraille,
+    FaRegImages,
+    FaVectorSquare,
+} from 'react-icons/fa';
 
 export const categories = [
     {
@@ -6,7 +11,7 @@ export const categories = [
         color: 'bg-red-500',
     },
     {
-        key: 'authentication',
+        key: 'encoding',
         color: 'bg-purple-500',
     },
 ];
@@ -30,7 +35,14 @@ export const services = [
         key: 'jwt-decode',
         href: '/utils/jwt-decode',
         text: 'JWT Decode',
-        category: 'authentication',
+        category: 'encoding',
         icon: FaBoxOpen,
+    },
+    {
+        key: 'base64',
+        href: '/utils/base64',
+        text: 'Base64 Encode/Decode',
+        category: 'encoding',
+        icon: FaBraille,
     },
 ];
