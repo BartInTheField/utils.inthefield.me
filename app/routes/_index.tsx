@@ -17,15 +17,13 @@ export default function Index() {
     return (
         <div className="flex h-screen items-center justify-center">
             <div className="flex flex-col items-center gap-16">
-                <nav className="flex flex-col items-center justify-center gap-4 rounded-3xl border border-gray-200 p-6 dark:border-gray-700">
-                    <p className="leading-6 text-gray-700 dark:text-gray-200">
-                        Utilities:
-                    </p>
+                <nav className="flex flex-col items-center justify-center gap-4 border border-stone-800 p-6 dark:border-stone-200">
+                    <p className="leading-6">Utilities:</p>
                     <ul>
                         {services.map(({ href, text, icon, category }) => (
                             <li key={href}>
                                 <Link
-                                    className="group flex items-center gap-3 self-stretch p-3 leading-normal text-blue-700 hover:underline dark:text-blue-500"
+                                    className="group flex items-center gap-3 self-stretch p-3 leading-norma hover:underline "
                                     to={href}
                                 >
                                     <ServiceIcon

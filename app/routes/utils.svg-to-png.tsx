@@ -1,6 +1,8 @@
 import type { MetaFunction } from '@remix-run/node';
 import React, { useState } from 'react';
 import Button from '~/components/Button';
+import { Input } from '~/components/Input';
+import { FileInput } from '~/components/FileInput';
 import { services } from '~/services';
 
 const service = services.find((s) => s.key === 'svg-to-png')!;
@@ -36,16 +38,16 @@ export default function Index() {
                 const parser = new DOMParser();
                 const svgDoc = parser.parseFromString(
                     event.target?.result as string,
-                    'image/svg+xml'
+                    'image/svg+xml',
                 );
                 const svgElement = svgDoc.documentElement;
                 const viewBox =
                     svgElement.getAttribute('viewBox')?.split(' ') || [];
                 const width = parseFloat(
-                    svgElement.getAttribute('width') || viewBox[2] || '0'
+                    svgElement.getAttribute('width') || viewBox[2] || '0',
                 );
                 const height = parseFloat(
-                    svgElement.getAttribute('height') || viewBox[3] || '0'
+                    svgElement.getAttribute('height') || viewBox[3] || '0',
                 );
 
                 setOriginalDimensions({ width, height });
@@ -110,54 +112,28 @@ export default function Index() {
                 onSubmit={handleSubmit}
                 className="flex flex-col items-center gap-8"
             >
-                {file && (
-                    <div className="border-4 border-gray-300 p-2 w-full h-full">
-                        <img
-                            src={URL.createObjectURL(file)}
-                            alt="Preview"
-                            className="max-w-xs max-h-xs"
-                            onLoad={(e) => {
-                                // Clean up the object URL after image loads
-                                URL.revokeObjectURL(
-                                    (e.target as HTMLImageElement).src
-                                );
-                            }}
-                        />
-                    </div>
-                )}
-                <input
-                    type="file"
-                    accept=".svg"
+                <FileInput
                     onChange={handleFileChange}
-                    className="w-full"
+                    accept=".svg"
+                    preview={file}
                 />
 
                 <div className="flex flex-col gap-4 w-full">
-                    <div className="flex items-center gap-2">
-                        <label htmlFor="width" className="w-20">
-                            Width:
-                        </label>
-                        <input
-                            id="width"
-                            type="number"
-                            value={Math.round(width)}
-                            onChange={handleWidthChange}
-                            className="border p-2 rounded w-full"
-                        />
-                    </div>
+                    <Input
+                        id="width"
+                        type="number"
+                        value={Math.round(width)}
+                        onChange={handleWidthChange}
+                        label="Width:"
+                    />
 
-                    <div className="flex items-center gap-2">
-                        <label htmlFor="height" className="w-20">
-                            Height:
-                        </label>
-                        <input
-                            id="height"
-                            type="number"
-                            value={Math.round(height)}
-                            onChange={handleHeightChange}
-                            className="border p-2 rounded w-full"
-                        />
-                    </div>
+                    <Input
+                        id="height"
+                        type="number"
+                        value={Math.round(height)}
+                        onChange={handleHeightChange}
+                        label="Height:"
+                    />
                 </div>
 
                 <Button type="submit">Convert and Download</Button>

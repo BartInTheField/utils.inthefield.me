@@ -12,7 +12,7 @@ export function ServiceIcon({
 }) {
     return (
         <div
-            className={`text-white flex items-center justify-center rounded-lg ${
+            className={`text-white flex items-center justify-center ${
                 categories.find((c) => c.key === category)?.color
             } ${xl ? 'w-16 h-16' : 'w-10 h-10'}`}
         >

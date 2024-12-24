@@ -1,23 +1,14 @@
-import {
-    Link,
-    Links,
-    Meta,
-    Outlet,
-    Scripts,
-    ScrollRestoration,
-    useLocation,
-} from '@remix-run/react';
+import { Links, Meta, Outlet } from '@remix-run/react';
 
+import { Body } from './body';
 import './tailwind.css';
-import { services } from './services';
-import { ServiceIcon } from './components/ServiceIcon';
+import { useDarkMode } from './state/darkMode.state';
 
 export function Layout({ children }: { children: React.ReactNode }) {
-    const location = useLocation();
-    const service = services.find((s) => s.href === location.pathname);
+    const { isDarkMode } = useDarkMode();
 
     return (
-        <html lang="en">
+        <html lang="en" className={isDarkMode ? 'dark' : ''}>
             <head>
                 <meta charSet="utf-8" />
                 <meta
@@ -32,46 +23,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 <Meta />
                 <Links />
             </head>
-            <body>
-                <nav className="p-2 bg-gray-100 dark:bg-gray-800 flex flex-col gap-4">
-                    <div className="flex flex-row justify-between gap-4 container mx-auto">
-                        <Link to="/" className="text-2xl font-bold">
-                            utils.InTheField.me
-                        </Link>
-                        <div className="flex flex-col justify-center">
-                            <div className="flex gap-4">
-                                <a
-                                    className="text-sm"
-                                    href="https://buymeacoffee.com/bartinthefield"
-                                >
-                                    Buy me a coffee
-                                </a>
-                                <a
-                                    className="text-sm"
-                                    href="https://github.com/bartinthefield/utils.inthefield.me"
-                                >
-                                    GitHub
-                                </a>
-                            </div>
-                        </div>
-                    </div>
 
-                    {service && (
-                        <div className="container mx-auto flex flex-row gap-4 items-center">
-                            <ServiceIcon
-                                icon={service.icon}
-                                category={service.category}
-                            />
-                            <h1 className="text-xl font-bold">
-                                {service?.text}
-                            </h1>
-                        </div>
-                    )}
-                </nav>
-                {children}
-                <ScrollRestoration />
-                <Scripts />
-            </body>
+            <Body>{children}</Body>
         </html>
     );
 }

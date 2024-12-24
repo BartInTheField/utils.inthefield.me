@@ -2,6 +2,7 @@ import type { MetaFunction } from '@remix-run/node';
 import React, { useState } from 'react';
 import Button from '~/components/Button';
 import { Select } from '~/components/Select';
+import { FileInput } from '~/components/FileInput';
 import { services } from '~/services';
 
 const service = services.find((s) => s.key === 'web-image-converter')!;
@@ -89,20 +90,7 @@ export default function Index() {
                 onSubmit={handleSubmit}
                 className="flex flex-col items-center gap-8"
             >
-                {file && (
-                    <div className="border-4 border-gray-300 p-2">
-                        <img
-                            src={URL.createObjectURL(file)}
-                            alt="Preview"
-                            className="max-w-xs max-h-xs"
-                        />
-                    </div>
-                )}
-                <input
-                    type="file"
-                    accept="image/*"
-                    onChange={handleFileChange}
-                />
+                <FileInput onChange={handleFileChange} preview={file} />
                 <Select
                     value={format}
                     onChange={handleFormatChange}

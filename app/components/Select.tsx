@@ -4,10 +4,10 @@ export const Select: React.FC<{
     value: string;
     onChange?: (event: React.ChangeEvent<HTMLSelectElement>) => void;
     options: { value: string; label: string }[];
-}> = ({value, onChange, options}) => {
+}> = ({ value, onChange, options }) => {
     return (
         <select
-            className="border border-gray-300 p-2 rounded-md"
+            className="border border-stone-800 dark:border-stone-200 bg-stone-300 dark:bg-stone-900 p-2"
             value={value}
             onChange={onChange}
         >
