@@ -15,7 +15,7 @@ export const meta: MetaFunction = () => {
 
 export default function Index() {
     return (
-        <div className="flex h-screen items-center justify-center">
+        <div className="flex mt-16 items-center justify-center">
             <div className="flex flex-col items-center gap-16">
                 <nav className="flex flex-col items-center justify-center gap-4 border border-stone-800 p-6 dark:border-stone-200">
                     <p className="leading-6">Utilities:</p>

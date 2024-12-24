@@ -1,9 +1,13 @@
-import { FaRegImages, FaVectorSquare } from 'react-icons/fa';
+import { FaBoxOpen, FaRegImages, FaVectorSquare } from 'react-icons/fa';
 
 export const categories = [
     {
         key: 'image',
         color: 'bg-red-500',
+    },
+    {
+        key: 'authentication',
+        color: 'bg-purple-500',
     },
 ];
 
@@ -21,5 +25,12 @@ export const services = [
         text: 'SVG to PNG',
         category: 'image',
         icon: FaVectorSquare,
+    },
+    {
+        key: 'jwt-decode',
+        href: '/utils/jwt-decode',
+        text: 'JWT Decode',
+        category: 'authentication',
+        icon: FaBoxOpen,
     },
 ];

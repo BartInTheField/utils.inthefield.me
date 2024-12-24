@@ -85,7 +85,7 @@ export default function Index() {
     };
 
     return (
-        <div className="flex h-screen items-center justify-center">
+        <div className="flex mt-16 items-center justify-center">
             <form
                 onSubmit={handleSubmit}
                 className="flex flex-col items-center gap-8"
